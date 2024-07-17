@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-132-99-76.us-east-2.compute.amazonaws.com<< 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-132-99-76.us-east-2.compute.amazonaws.com << 'EOF'
             cd /home/ubuntu/dockettestactions/dockertest
             git pull origin main
             # ./deploy_script.sh
