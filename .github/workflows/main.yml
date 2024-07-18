@@ -3,7 +3,7 @@ name: Deploy to AWS
 on:
   push:
     branches:
-      - main  # Cambia 'main' por la rama que desees desplegar
+      - main # Cambia 'main' por la rama que desees desplegar
 
 jobs:
   deploy:
@@ -22,6 +22,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-132-99-76.us-east-2.compute.amazonaws.com << 'EOF'
             cd /home/ubuntu/dockertestactions/dockertest
-            git pull origin main
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/aws_action_dockertest -F /dev/null" git pull origin main
             # ./deploy_script.sh
           EOF
