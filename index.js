@@ -1,7 +1,11 @@
-console.log('codigo totalmente nuevo')
+import express from 'express'
 
-console.log('codigo totalmente nuevo')
-console.log('otro texto')
+const app = express()
 
+app.get('/',(req, res)=>{
+    res.send('hi server')
+})
 
-
+app.listen(3002,()=>{
+    console.log('server init on port 3002')
+})
